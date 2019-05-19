@@ -1,0 +1,28 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.page {
+  width: 940px;
+  margin: 0 auto;
+
+  .sidebar {
+    float: left;
+    width: 200px;
+    background: #DEDEDE;
+    border-radius: 8px;
+    padding: 8px;
+
+    ul {
+      padding-left: 10px;
+      list-style-type: none;
+    }
+  }
+
+  .wrapper {
+    margin-left: 230px;
+    // width: 640px;
+    width: 710px;
+  }
+}
