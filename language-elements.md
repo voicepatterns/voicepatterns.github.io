@@ -1,4 +1,7 @@
-Voice conversations are supported by combining language elements for receiving user input, along with elements for output as well as conversational elements (which track user state). Custom elements (widgets) can also be created and used as needed.
+convo.---
+title: Language Elements
+---
+Voice conversations need to be supported by combining language elements for receiving user input, along with elements for output as well as conversational elements (which track user state). Custom elements (widgets) can also be created and used as needed.
 
 Each element can be given an `id` for accessing later to either extend the conversational model or to allow the flow to jump to the point.
 
@@ -18,13 +21,13 @@ A trivial voice script would be:
 
 The above script, on being triggered, would say: 'Hey. Good to meet you'.
 
-For input, scripts can add to the `expecting` element parameters that would be expected. To do this, they should ideally define the parameter types first. For example, the below lets the user give their name and greets them accordingly: 
+For input, scripts can add to the `expecting` element parameters that would be expected. To do this, they should ideally define the parameter types first. For example, the below lets the user give their name and greets them accordingly:
 ```javascript
-violet.addInputTypes({
+convo.addInputTypes({
   'name': 'firstName',
 });
 
-violet.addScript(`<app>
+convo.addScript(`<app>
   <expecting>My name is [[name]]</expecting>
   <say>Hey [[name]]</say>
   <say>Good to meet you</say>
@@ -35,7 +38,7 @@ Supported parameter types include: `firstName`, `lastName`, `number`, `date`, `t
 
 
 For output, beyond the `say` element, scripts can:
-- Use the `sayOne` element to describe multiple optional output phrases for the framework to pick one randomly and provide for a variety of responses. 
+- Use the `sayOne` element to describe multiple optional output phrases for the framework to pick one randomly and provide for a variety of responses.
 - Use the `ask` element to ask a question to the user, which the framework will present to the user at the end of all the `say` elements.
 - Use the `prompt` element to ask one of up to 3 questions to the user, which will be presented together to the user at the end.
 
@@ -51,7 +54,7 @@ Most voice applications boil down to the system asking a question, the user maki
 
 These can be written as - in JavaScript:
 ```javascript
-violet.addDecision({
+convo.addDecision({
   prompt: "What two numbers would you like me to add"
   choices: [
     {
@@ -89,9 +92,9 @@ We use `dialog` to enable obtaining data for such a situation. The biggest diffe
 An example of a dialog in JavaScript:
 
 ```javascript
-violet.addDialog({
+convo.addDialog({
   expecting: "What time does the [[airline]] flight arrive {from [[city]]|}"
-  resolveCheck: violet.reqdParams
+  resolveCheck: convo.reqdParams
   items: [{
     name: "airline",
     required: true,
@@ -221,12 +224,12 @@ Finally, scripts can check for multiple values using a `check`-`case`-`default` 
 
 Consider the below code that creates a simple voice-based calculator.
 
-We first load violet, declare input variables and their types, define the service, and then load the conversational script.
+We first load the conversation engine, declare input variables and their types, define the service, and then load the conversational script.
 
 ```javascript
-var violet = require('violet').script();
+var convo = require('...');
 
-violet.addInputTypes({
+convo.addInputTypes({
   "NumOne": "NUMBER",
   "NumTwo": "NUMBER",
 });
@@ -237,7 +240,7 @@ var app = {
   multiply: (a, b)=>{return parseInt(a)*parseInt(b); },
   divide: (a, b)=>{return parseInt(a)/parseInt(b); }
 }
-violet.addFlowScript('script.cfl', {app});
+convo.addFlowScript('script.cfl', {app});
 ```
 
 The conversational script becomes:

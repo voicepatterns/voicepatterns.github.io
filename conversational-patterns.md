@@ -1,12 +1,15 @@
-Violet Conversations are created by connecting a set of elements in a Voice Script. Violet manages these elements, allows for defining them in a user-experience supportive manner, and also allows developers to configure them as needed.
+---
+title: Conversational Patterns
+---
+Voice Conversations need to be created by connecting a set of elements in a Voice Script. A Conversation Engine should manage these elements, allows for defining them in a user-experience supportive manner, and also allows developers to configure them as needed.
 
-Violet builds on core conversation concepts below.
+Conversation Engines need to build on core conversation concepts below.
 
 ## Phrases (Utterances), Intents, and Parameters (Slots)
 In a conversation, a user can say one of many Phrases that map to a single Intent (action). Phrases can include a parameter from the user.
 
 ## States
-Voice conversations consist of a set of requests from the user and responses back to the user. In order to support these user events and track where a user is in a voice script, Violet needs to track and manage the users' conversational state.
+Voice conversations consist of a set of requests from the user and responses back to the user. In order to support these user events and track where a user is in a voice script, Conversation Engines needs to track and manage the users' conversational state.
 
 ## Branching
 Voice scripts are unique in that they need to support a lot of branching (to support the various user intents). These require support for nested case-like statements with additional support for repeating prompts as requested by the user, supporting misrecognitions, else logic, and modularization rules.
@@ -22,7 +25,7 @@ If a leaf element finishes processing and it does not have any children then the
 ## Frames
 Frames allow for the explicit presentation of a hierarchy to users in a voice conversation. They allow the user to say "go back".
 
-A frame is a point in the flow that the conversation will return to when the flow below the frame finishes and has nothing more to talk about. 
+A frame is a point in the flow that the conversation will return to when the flow below the frame finishes and has nothing more to talk about.
 
 Menus are most often branches + frames.
 
@@ -64,4 +67,3 @@ Pick from a large list:
 - A: Which football team do you want to hear statistics about?
 - U: Baltimore Ravens
 - A: The Baltimore Ravens scored ..... Which Football team do you want to hear statistics about?
-
