@@ -10,6 +10,8 @@ We see Voice Patterns helping address common challenges that arise when building
 
 * Dustin Coates
 
+* Jan König
+
 * Kane Simms
 
 * Vineet Sinha
