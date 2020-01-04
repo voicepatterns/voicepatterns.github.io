@@ -16,7 +16,7 @@ We see Voice Patterns helping address common challenges that arise when building
 
 * Vineet Sinha
 
-* Steve Tingris
+* Steve Tingiris
 
 
 Working group members commit to (a) driving forward the discuss about voice patterns, (b) collecting concrete insights and suggestions for review by the working group, and (c) attending group calls every other month to refine these ideas.
